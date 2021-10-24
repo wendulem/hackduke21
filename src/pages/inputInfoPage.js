@@ -75,7 +75,7 @@ function InputPage() {
     const [typePlaceHolder, setTypePlaceHolder] = React.useState("Select The Type Of Procedure");
     const [namePlaceHolder, setNamePlaceHolder] = React.useState("Select Your Procedure");
 
-    const [post, setPost] = React.useState(null);
+    const [cost, setCost] = React.useState(null);
     const [loading, setLoading] = React.useState(false);
 
     function createPost() {
@@ -90,7 +90,7 @@ function InputPage() {
             zip_code: zipcode,
         })
         .then((response) => {
-          setPost(response.data);
+          setCost(response.data);
         });
         setLoading(false);
     }
@@ -361,7 +361,7 @@ function InputPage() {
         <div className="App-background">
             <div className="Info-header-content">
                 <div className="Info-text-header" onCLick={backHome}>
-                    HealthCare 4 Virgins
+                    MedHelp
                 </div>
             </div>
             <div className="Info-container">
@@ -392,6 +392,9 @@ function InputPage() {
                                     setDone(true);
                                     handleClick()
                                     message.success('Processing complete!')
+                                    localStorage.setItem('state', state);
+                                    localStorage.setItem('zipcode', zipcode)
+                                    localStorage.setItem('procedure', procedureName)
                                 }}>
                                     Calculate
                                 </Button>
@@ -410,7 +413,7 @@ function InputPage() {
             </div>
 
       </div>
-      : <div className="App-background">
+      : loading == true ? <div className="App-background">
             <div className="Results-header-content">
                 <div className="Results-text-header">
                     HealthCare 4 Virgins
@@ -424,7 +427,7 @@ function InputPage() {
                 </h1>
                 <div className="Expected-cost-container">
                     <div className="Expected-cost-text">
-                        $1,000
+                        Fucking loading
                     </div>
                 </div>
                 <div className="Results-back-button-container">
@@ -434,7 +437,32 @@ function InputPage() {
                 </div>
             </div>
             
+      </div> :
+      <div className="App-background">
+      <div className="Results-header-content">
+          <div className="Results-text-header">
+              HealthCare 4 Virgins
+          </div>
       </div>
+
+      <div className="Results-info-container">
+
+          <h1 className="Results-info-container-header">
+              Expected Out Of Pocket Cost
+          </h1>
+          <div className="Expected-cost-container">
+              <div className="Expected-cost-text">
+                  $+{cost}
+              </div>
+          </div>
+          <div className="Results-back-button-container">
+              <div className="Results-back-button" onClick={setDone(false)}>
+                  Update Search Info
+              </div>
+          </div>
+      </div>
+      
+</div>
   
   
     );

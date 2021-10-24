@@ -8,43 +8,19 @@ import { Input } from 'antd';
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
-const baseURL = "https://jsonplaceholder.typicode.com/posts";
 
 
 
  
-function ResultsPage() {
+function CostPage() {
     const history = useHistory();
     function handleClick() {
         history.push("/input");
-
       }
 
-    const [current, setCurrent] = useState(0);
-    const [cost, setCost] = React.useState(null);
 
-    var state = localStorage.getItem('state');
-    var zipcode = localStorage.getItem('zipcode');
-    var procedure = localStorage.getItem('procedure');
-    console.log("eh")
-    console.log(state)
-
-    function createPost() {
-        console.log(state);
-        console.log(procedure);
-        console.log(zipcode);
-        axios
-        .post(baseURL, {
-            state_code: state,
-            procedure: procedure,
-            zip_code: zipcode,
-        })
-        .then((response) => {
-          setCost(response.data);
-          localStorage.setItem('cost', response.data);
-          history.push("/cost");
-        });
-    }
+    var cost = localStorage.getItem('cost');
+  
 
     return(
         <div className="App-background">
@@ -61,11 +37,11 @@ function ResultsPage() {
                 </h1>
                 <div className="Expected-cost-container">
                     <div className="Expected-cost-text">
-                        Price for {state} and {zipcode}
+                        $+{cost}
                     </div>
                 </div>
                 <div className="Results-back-button-container">
-                    <div className="Results-back-button" onClick={createPost}>
+                    <div className="Results-back-button" onClick={handleClick}>
                         Update Search Info
                     </div>
                 </div>
@@ -76,4 +52,4 @@ function ResultsPage() {
     );
 }
 
-export default ResultsPage;
+export default CostPage;

@@ -17,7 +17,7 @@ function LandingPage() {
                     <Row align="middle">
                     <Col span={8}>
                         <div className="Text-header">
-                            HealthCare 4 Virgins
+                            MedHelp
                         </div>
                     </Col>
                     <Col span={9}></Col>

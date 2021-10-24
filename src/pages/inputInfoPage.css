@@ -1,0 +1,29 @@
+.Info-text-header{
+    color: white;
+    font-size: 34px;
+    padding-left: 2.5%;
+    padding-top: 1%;
+    font-weight: 450;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .Info-header-content{
+      height: 10vh;
+      width: 100vw;
+      background-color: #00539B;
+  }
+  .Info-container{
+    margin-top: 20vh;
+    margin-left: 25vw;
+    padding-left: 5vw;
+    padding-top: 3vh;
+    height: 40vh;
+    width: 50vw;
+    border: 2px solid #00539B;
+    border-radius: 5px;
+  }
+  .Info-container-header{
+    width: 40vw;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #00539B;
+  }

@@ -3,6 +3,7 @@ import './App.css';
 import LandingPage from './pages/landingPage';
 import InputPage from './pages/inputInfoPage';
 import ResultsPage from './pages/resultsPage';
+import AxiosTest from './pages/axiosTest';
 import {
   BrowserRouter as Router,
   Route,
@@ -21,6 +22,7 @@ function App() {
             <Route exact path="/home" component={LandingPage} />
             <Route exact path="/input" component={InputPage} />
             <Route exact path="/results" component={ResultsPage} />
+            <Route exact path="/axios" component={AxiosTest} />
           </Switch>
         </Router>
     </div>

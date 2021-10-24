@@ -37,7 +37,7 @@ function CostPage() {
                 </h1>
                 <div className="Expected-cost-container">
                     <div className="Expected-cost-text">
-                        $+{cost}
+                        Cost
                     </div>
                 </div>
                 <div className="Results-back-button-container">

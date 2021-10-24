@@ -61,7 +61,7 @@ function ResultsPage() {
                 </h1>
                 <div className="Expected-cost-container">
                     <div className="Expected-cost-text">
-                        Price for {state} and {zipcode}
+                        Cost for procedure in {state} and {zipcode}
                     </div>
                 </div>
                 <div className="Results-back-button-container">
